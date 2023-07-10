@@ -1,0 +1,16 @@
+.buttonCta{
+    button{
+        width: 170px;
+        height:55px;
+        border-radius: 5px;
+        background: #22C8D3;
+        border: none ;
+        font-weight: 400;
+        color: white;
+        transition: all linear 0.4s;
+    }
+  button:hover{
+    background: rgb(13, 105, 158);
+
+  }
+}
