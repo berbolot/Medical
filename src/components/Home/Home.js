@@ -1,8 +1,9 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
-import Contact from '../Contact/Contact';
 import Feature from '../Feature/Feature';
 import ServiceSection from '../ServiceSection/ServiceSection';
+import Appointment from '../Appointment/Appointment';
+import Otzyv from '../Otzyv/Otzyv';
 
 const Home = () => {
    return (
@@ -11,7 +12,8 @@ const Home = () => {
          <Feature></Feature>
          <ServiceSection></ServiceSection>
          
-         <Contact></Contact>
+         <Otzyv />
+         <Appointment />
       </div>
    );
 };

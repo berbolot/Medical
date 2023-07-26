@@ -1,9 +1,9 @@
 import React from 'react';
-import contact from '../../images/contact.png';
 import { useFormik } from "formik";
 import * as yup from 'yup';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import './contact.scss';
 
 const Contact = () => {
    const formik = useFormik({
@@ -47,13 +47,11 @@ const Contact = () => {
   })
 
   return (
-    <div className="contact" style={{marginTop:'100px'}}>
+    <div className="contact" style={{marginTop:'60px'}}>
+      
       <div className="contact-bg">
-        <div className="container-fluid px-0">
-          <div className="row justify-content-center align-items-center">
-            <div className="col-lg-6 mb-5 mb-lg-0">
-              <img className="img-fluid" src={contact} alt="" />
-            </div>
+       
+          
             <div className="col-lg-6">
               <div className="contact-box">
                 <div className="px-lg-3">
@@ -115,8 +113,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+    
       <ToastContainer />
     </div>
   );

@@ -9,6 +9,7 @@ body {
   font-weight: 400 !important;
   color: #111 !important
 }
+
 .form-control:focus {
   background-color: #fff;
   border-color: none !important;
@@ -54,8 +55,9 @@ h5 {
 }
 .navbar .logo {
   width: 330px;
-  margin-bottom: 0;
+  margin-bottom: 0;  
 }
+
 .navbar .hamburger {
   padding-top: 10px;
 }
@@ -80,9 +82,10 @@ h5 {
   background: none;
   padding: 0;
 }
+
 .navbar .nav-item .line {
   height: 3px;
-  background-color: blue;
+  background-color: rgb(0, 222, 251);
   width: 0%;
   transition: 0.3s all linear;
 }
@@ -96,6 +99,14 @@ h5 {
 .navbar .nav-item .link:hover {
   color: #2196f3;
 }
+
+.navbar .nav-item.active .line {
+  width: 100%;
+}
+.navbar .nav-item.active .link{
+  color: #2196f3;
+}
+
 .navbar-toggler:focus {
   box-shadow: 0 0 0 0rem !important;
 }
@@ -106,13 +117,73 @@ h5 {
   overflow: hidden;
   height: 650px;
 }
+
+.banner span {
+  display: none;
+  text-align: center;
+  font-size: 14px;
+}
+
+.whatsapp-button {
+  position: fixed;
+  right: 13px;
+  bottom: 20px;
+  transform: translate(-50%, -50%);
+  background: #25D366; /*цвет кнопки*/
+  border-radius: 50%;
+  width: 55px; /*ширина кнопки*/
+  height: 55px; /*высота кнопки*/
+  color: #fff;
+  text-align: center;
+  line-height: 53px; /*центровка иконки в кнопке*/
+  font-size: 35px; /*размер иконки*/
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.whatsapp-button a {
+  color: #fff;
+}
+.whatsapp-button:before,
+.whatsapp-button:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  border: 50%;
+  border: 1px solid #25D366; /*цвет анимированных волн от кнопки*/
+  left: -20px;
+  right: -20px;
+  top: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  animation: animate 1.5s linear infinite;
+  opacity: 0;
+  backface-visibility: hidden; 
+}
+
+.whatsapp-button:after{
+  animation-delay: .5s;
+}
+
+@keyframes animate
+{
+  0%
+  {
+      transform: scale(0.5);
+      opacity: 0;
+  }
+  50%
+  {
+      opacity: 1;
+  }
+  100%
+  {
+      transform: scale(1.2);
+      opacity: 0;
+  }
+}
 .banner-bg {
-  /* background: url('https://clinica-opora.ru/wp-content/uploads/2021/06/7e4e15347b6aed63b9c1c6f51ec9c55f.jpeg');
-  background-attachment: fixed;
-  
-  background-position: top left;
-  background-size: cover; */
-  
   position: relative;
   padding: 200px 0 100px 0;
   /* overflow: hidden; */
@@ -193,36 +264,44 @@ object-fit: cover;
   background-position: center;
   padding: 50px 0;
 }
-.service-box {
-  background: #fff;
-  border-radius: 10px;
-  margin: 15px 0;
-  padding: 10px;
+.uslugi_df {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-.service-box img {
+.uslugi {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  cursor: pointer;
+  transition: .5s all linear;
+}
+
+.uslugi:hover {
+  transform: translateY(-10px);
+}
+
+.uslugi > img {
   border-radius: 10px;
-  margin-bottom: 15px;
   width: 100%;
+  border-radius: 5px 5px 0 0;
 }
-.service-box .info {
-  padding: 10px;
-  text-align: center;
+
+.uslugi_df .uslugi .service_btn {
+  width: 100%;
+  height:55px;
+  border-radius: 0 0 5px 5px;
+  
+  background: #22C8D3;
+  border: none ;
+  font-weight: 400;
+  color: white;
+  transition: all linear 0.4s;
 }
-.service-box .name {
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.service-box .description {
-  margin-bottom: 10px;
-}
-.service-box button {
-  color: #2196f3;
-  font-family: 'Teko', sans-serif;
-  font-size: 20px;
-  background: #fff;
-  border: none;
-  margin: 0;
-  padding: 0;
+
+.uslugi_df .uslugi .service_btn:hover {
+  background: rgb(13, 105, 158);
 }
 
 /* service details */
@@ -258,19 +337,18 @@ object-fit: cover;
 
 /* about */
 .about {
-  background: #fff;
+  background: rgb(191, 216, 206);
 }
 .about-bg {
   background: url(./images/overlay2.png);
   background-position: top left;
   background-size: cover;
-  
   position: relative;
   padding: 200px 0 100px 0;
   overflow: hidden;
 }
 .about .text-box {
-  color: #273238;
+  color: #3a2fb2;
   z-index: 100000;
   overflow: hidden;
   padding-right: 302px;
@@ -280,10 +358,10 @@ object-fit: cover;
   font-weight: 600;
 }
 .about .text-box p {
-  color: #273238
+  color: purple;
 }
 .about .text-box ul li {
-  color: #273238;
+  color: purple;
   margin-top: 15px;
 }
 
@@ -352,9 +430,7 @@ object-fit: cover;
 }
 
 /* contact & appointment */
-.contact {
-  background: #fff;
-}
+
 .contact-bg {
   background: url(./images/overlay2.png);
   background-position: top left;
@@ -363,40 +439,59 @@ object-fit: cover;
   padding: 50px 0;
   overflow: hidden;
 }
+
+ .carta {
+   position: relative;
+    overflow: hidden;
+    margin-left: 5%;
+     height: 450px;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 8px rgb(176, 239, 182);
+}
+
+.contact-box2 {
+    box-shadow: 0 4px 8px rgb(169, 243, 243);
+    border-radius: 20px;
+    width: 90%;
+    margin-left: 5%;
+    height: 450px;
+    padding: 20px;
+  }
+
 .appointment-bg {
-  padding: 200px 0 100px 0;
+  padding: 30px 0 100px 0;
 }
 .contact .header-text {
   margin-bottom: 30px;
 }
 .appointment .header-text {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .contact .contact-box {
   color: #273238;
   z-index: 100000;
   overflow: hidden;
-  padding-right: 302px;
 }
-.contact .contact-box h2 {
-  font-size: 60px;
+.contact .contact-box h4 {
+  font-size: 20px;
+  color: #2196f3;
   font-weight: 600;
 }
 .contact .contact-box p {
-  color: #273238
+  color: #26719f
 }
 .contact .form-group {
   margin-bottom: 30px;
 }
 .contact .form-group label {
-  color: #273238;
+  color: #307e46;
   margin-bottom: 10px;
 }
-.contact .form-group input,
-.contact .form-group select {
+.contact .form-group input {
   border: none;
   color: #666;
-  height: 60px;
+  height: 55px;
   border-radius: 30px;
   padding: 20px;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
@@ -406,7 +501,7 @@ object-fit: cover;
 }
 .contact .form-group textarea {
   color: #333;
-  height: 180px;
+  height: 150px;
   border-radius: 30px;
   padding: 20px;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
@@ -415,8 +510,8 @@ object-fit: cover;
 .submit-btn {
   background: #2f2d52;
   color: #fff !important;
-  width: 50%;
-  height: 60px;
+  width: 47%;
+  height: 55px;
   border: none !important;
   border-radius: 30px;
   padding-top: 5px;
@@ -435,11 +530,103 @@ object-fit: cover;
   background: #ebf2fa;
   padding-bottom: 100px;
 }
-.footer .logo {
-  color: #2f2d52;
-  font-size: 45px;
-  margin-bottom: 15px;
+
+.turkmed_text {
+  margin-top: 125px;
 }
+
+.footer .logo {
+  /* color: #2f2d52; */
+  position: absolute;
+  font-size: 8em;
+  margin-bottom: 15px;
+  line-height: 1em;
+  color: rgb(227, 190, 122);
+  text-shadow: -2px 2px 0 rgb(255, 242, 0),
+  -4px 4px 0 rgb(255, 242, 0),
+  -6px 6px 0 rgb(255, 242, 0),
+  -8px 8px 0 rgb(255, 242, 0),
+  -10px 10px 0 rgb(255, 242, 0),
+  -10px 10px 0 rgb(255, 242, 0),
+  -12px 12px 0 rgb(255, 242, 0),
+  -14px 14px 0 rgb(255, 242, 0),
+  -16px 16px 0 rgb(255, 242, 0),
+  -18px 18px 20px #000,
+  -18px 18px 30px #000,
+  -18px 18px 50px #000,
+  -18px 18px 150px #000;
+}
+
+.footer .logo:nth-child(2){
+  color: #03a9f4;
+  text-shadow: -2px 2px 0 #0375a9,
+  -4px 4px 0 #0375a9,
+  -6px 6px 0 #0375a9,
+  -8px 8px 0 #0375a9,
+  -10px 10px 0 #0375a9,
+  -10px 10px 0 #0375a9,
+  -12px 12px 0 #0375a9,
+  -14px 14px 0 #0375a9,
+  -16px 16px 0 #0375a9,
+  -18px 18px 20px #000,
+  -18px 18px 30px #000,
+  -18px 18px 50px #000,
+  -18px 18px 150px #000;
+  clip-path: circle(20% at 50% 100%);
+  transition: clip-path 2.5s;
+}
+.footer .logo:hover:nth-child(2){
+  clip-path: circle(110% at 50% 100%);
+  z-index: 100;
+}
+
+.footer .logo:nth-child(3){
+  color: #2cff37;
+  text-shadow: -2px 2px 0 #08a010,
+  -4px 4px 0 #08a010,
+  -6px 6px 0 #08a010,
+  -8px 8px 0 #08a010,
+  -10px 10px 0 #08a010,
+  -10px 10px 0 #08a010,
+  -12px 12px 0 #08a010,
+  -14px 14px 0 #08a010,
+  -16px 16px 0 #08a010,
+  -18px 18px 20px #000,
+  -18px 18px 30px #000,
+  -18px 18px 50px #000,
+  -18px 18px 150px #000;
+  clip-path: circle(20% at 0% 10%);
+  transition: clip-path 2.5s;
+}
+.footer .logo:hover:nth-child(3){
+  clip-path: circle(110% at 0% 0%);
+  z-index: 100;
+}
+
+.footer .logo:nth-child(4){
+  color: #e91e63;
+  text-shadow: -2px 2px 0 #ae0840,
+  -4px 4px 0 #ae0840,
+  -6px 6px 0 #ae0840,
+  -8px 8px 0 #ae0840,
+  -10px 10px 0 #ae0840,
+  -10px 10px 0 #ae0840,
+  -12px 12px 0 #ae0840,
+  -14px 14px 0 #ae0840,
+  -16px 16px 0 #ae0840,
+  -18px 18px 20px #000,
+  -18px 18px 30px #000,
+  -18px 18px 50px #000,
+  -18px 18px 150px #000;
+  clip-path: circle(20% at 100% 50%);
+  transition: clip-path 2.5s;
+}
+.footer .logo:hover:nth-child(4){
+  clip-path: circle(130% at 100% 50%);
+  z-index: 100;
+}
+
+
 .footer h5 {
   margin-bottom: 25px;
   margin-top: 22px;
@@ -460,6 +647,20 @@ object-fit: cover;
   margin-right: 10px;
   margin-top: 3px;
 }
+
+.slick-next:before{
+  font-size: 60px !important;
+  color: rgb(35, 177, 187) !important;
+  position: absolute;
+  left: 85px;
+}
+.slick-prev:before {
+  font-size: 60px !important;
+  color: rgb(35, 177, 187) !important;
+ position: absolute;
+  right: 96px;
+}
+
 
 /* not found */
 .not-found {
@@ -483,31 +684,38 @@ object-fit: cover;
   }
   .about .text-box,
   .contact .contact-box {
-    padding-right: 152px;
+    padding-right: 152px; 
   }
 }
+
 @media (max-width: 1400px) {
   .banner .text-box {
     padding-left: 52px;
   }
   .about .text-box,
   .contact .contact-box {
-    padding-right: 52px;
+    padding-right: 52px; 
   }
 }
+
 @media (max-width: 1366px) {
   .banner .text-box {
     padding-left: 125px;
   }
+  
   .about .text-box,
   .contact .contact-box {
-    padding-right: 125px;
+    padding-right: 125px; 
   }
 }
+
 @media (max-width: 992px) {
   .navbar .navbar-nav .nav-item {
     text-align: center;
     margin: 15px 0;
+  }
+  .uslugi{
+    width: 87%;
   }
   .login .login-box {
     padding: 15px;
@@ -516,6 +724,14 @@ object-fit: cover;
   .about .text-box,
   .contact .contact-box {
     padding: 0 15px;
+  }
+  .banner .text-box .fs-1 {
+    font-size: 20px !important;
+    margin-top: 140px;
+  }
+  .bg_carousel img {
+    margin-top: 160px;
+    height: 350px;
   }
 }
 @media (max-width: 576px) {
@@ -542,3 +758,4 @@ color: #22C8D3;
 .banner .text-box{
   padding: 0;
 }
+

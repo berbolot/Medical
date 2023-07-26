@@ -8,7 +8,7 @@ const Feature = () => {
       <div className="feature">
          <div className="container">
             <div className="header-text text-center">
-               <h3>Наши особенности</h3>
+               <h3>Наши преимущества</h3>
                <p>Откройте для себя идеальную программу в нашей медицине.</p>
             </div>
             <div className="row">

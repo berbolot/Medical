@@ -15,11 +15,12 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Register from "./components/Register/Register";
 import Appointment from "./components/Appointment/Appointment";
 import Galery from "./components/Galery/Galery";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
-  
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
@@ -36,7 +37,7 @@ function App() {
         <Route path="/register" element={<Register />} />
 
         <Route path="/contact" element={<Contact />} />
-        <Route path="/appointment" element={<Appointment />} />
+        {/* <Route path="/appointment" element={<Appointment />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer></Footer>

@@ -1,0 +1,169 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.otzyv {
+  background: url(../../images/overlay2.png);
+  background-position: top left;
+  background-size: cover;
+  padding: 120px 0 40px 0;
+  overflow: hidden;
+}
+
+.slider {
+  width: 48%;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+
+.text {
+  margin-left: 15%;
+  margin-bottom: 40px;
+  color: rgb(176, 236, 86);
+  font-family: cursive;
+  font-weight: 600;
+}
+
+.border {
+  border-radius: 10px;
+  background-color: cornsilk;
+}
+
+.padd {
+  padding: 35px 30px;
+}
+
+.con1 {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.col {
+  margin-right: 50%;
+}
+
+.kname {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.name_icon {
+  padding: 10px;
+  background-color: rgb(156, 156, 156);
+  color: white;
+  border-radius: 50%;
+  font-size: 25px;
+}
+
+.star {
+  color: gold;
+  font-size: 17px;
+}
+
+// our
+
+.our {
+  margin: 150px auto;
+  width: 68%;
+
+  h4 {
+    color: rgb(176, 236, 86);
+    font-family: cursive;
+    font-weight: 600;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+
+    .con {
+      border: 1px solid gray;
+      border-radius: 10px;
+      width: 32%;
+      height: 120px;
+
+      b {
+        padding: 0px 14px 0px;
+        font-family: Inter, sans-serif;
+        color: rgb(1, 71, 130);
+        font-size: 36px;
+        line-height: 65px;
+        font-weight: 700;
+      }
+      p {
+        padding: 0px 14px 0px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+          color: rgb(98, 95, 178);
+      }
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  .slider {
+    width: 67%;
+  }
+
+  .text {
+    margin-left: 0;
+  }
+
+  .col {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .otzyv {
+    padding: 80px 0 20px 0;
+  }
+
+  .slider {
+    width: 67%;
+  }
+
+  .padd {
+    padding: 25px 20px;
+  }
+
+  .con1 {
+    flex-direction: column;
+  }
+
+  .col {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .kname {
+    height: 40px;
+    width: 40px;
+  }
+
+  .name_icon {
+    padding: 5px;
+    font-size: 20px;
+  }
+
+  .star {
+    font-size: 15px;
+  }
+
+  .our {
+    margin: 100px auto;
+  }
+
+  .content {
+    flex-wrap: wrap;
+  }
+
+  .con {
+    width: 100%;
+  }
+}

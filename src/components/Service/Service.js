@@ -10,7 +10,7 @@ const Service = ({service}) => {
       const url = `/service/${id}`
       navigate(url)
    }
-gti
+
    return (
       <div className="col-sm-6 col-lg-4 mx-auto">
          <div className="service-box shadow">

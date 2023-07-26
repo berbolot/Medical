@@ -2,7 +2,7 @@ import React from "react";
 // import { useLocation, useHistory } from 'react-router';
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
+// import useAuth from "../../hooks/useAuth";
 import googleIcon from "../../images/google1.png";
 
 const Register = () => {
